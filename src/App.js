@@ -13,10 +13,16 @@ class SearchBar extends Component{
 
 class FilterableFaveBookApp extends Component {
   render() {
+    var books = [];
+    this.props.books.forEach(function(book){
+      books.push(book.title);
+    })
     return (
       <div className="App">
         <SearchBar />
-        {this.props.books[0].author}
+        <div>{books}
+        </div>
+
       </div>
     );
   }
