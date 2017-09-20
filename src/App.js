@@ -30,6 +30,7 @@ class BookInfo extends Component{
 class BookBox extends Component{
   render(){
     var booksArr = [];
+    var lastCategory = null;
 
     this.props.books.forEach(function(book){
       booksArr.push(
