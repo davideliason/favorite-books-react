@@ -6,9 +6,7 @@ class SearchBar extends Component{
   render(){
     return(
         <form>
-        <label>Search For:
-        </label>
-          <input type="text" placeholder={this.props.filterText} />
+          <input type="text" placeholder="Search ..." value={this.props.filterText} />
            <p>
           <input type="checkbox" />
           {' '}
@@ -63,14 +61,17 @@ class FilterableFaveBookApp extends Component {
   constructor(props){
     super(props);
     this.state={
-      filterText: 'alien',
+      filterText: '',
       seeBookOwned: false
     }
   }
   render() {
     return (
       <div className="App">
-        <SearchBar filterText={this.state.filterText} />
+        <SearchBar 
+          filterText={this.state.filterText}
+          seeBookOwned={this.state.seeBookOwned}
+         />
         <BookBox books = {this.props.books} />
       </div>
     );
