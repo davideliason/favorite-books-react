@@ -22,8 +22,11 @@ class BookBox extends Component{
   
   render(){
     var booksArr = [];
+
     this.props.books.forEach(function(book){
-      booksArr.push(book.title + book.author);
+      booksArr.push(
+        <GenreBar category={book.category} />
+      );
     });
     return(
       <div>
