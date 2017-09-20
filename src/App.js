@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+class SearchBar extends Component{
+  render(){
+    return(
+        <h3> Search Bar here </h3>
+      );
+  }
+}
 
 
 class FilterableFaveBookApp extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <SearchBar />
+        {this.props.books[0].author}
       </div>
     );
   }
