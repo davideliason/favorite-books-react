@@ -33,21 +33,21 @@ class BookBox extends Component{
     var lastCategory = null;
 
     this.props.books.forEach(function(book){
-      booksArr.push(
-       <div>
-        <GenreBar category={book.category} />
-        <BookInfo book={book} />
-       </div>
-      );
+      if(book.category !== lastCategory){
+        booksArr.push(<GenreBar category={book.category} />);
+       }
+      booksArr.push(<BookInfo book={book} />);
+      lastCategory = book.category;
     });
+
     return(
       <div>
-        <h3>Title  Author</h3>
         {booksArr}
       </div>
     );
   }
 }
+
 
 
 class FilterableFaveBookApp extends Component {
