@@ -5,7 +5,9 @@ import './App.css';
 class SearchBar extends Component{
   render(){
     return(
-        <h3> Search Bar here </h3>
+        <form>
+          <input type="text" placeholder="search for.." />
+        </form>
       );
   }
 }
