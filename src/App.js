@@ -18,14 +18,25 @@ class GenreBar extends Component{
   }
 }
 
+class BookInfo extends Component{
+  render(){
+    var title = this.props.book.owned ? this.props.book.title : <span style={{color:'red'}}>{this.props.book.title}</span>;
+    return(
+      <span>{title} by {this.props.book.author}</span>
+    );
+  }
+}
+
 class BookBox extends Component{
-  
   render(){
     var booksArr = [];
 
     this.props.books.forEach(function(book){
       booksArr.push(
+       <div>
         <GenreBar category={book.category} />
+        <BookInfo book={book} />
+       </div>
       );
     });
     return(
