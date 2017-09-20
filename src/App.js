@@ -7,6 +7,11 @@ class SearchBar extends Component{
     return(
         <form>
           <input type="text" placeholder="search for.." />
+           <p>
+          <input type="checkbox" />
+          {' '}
+          show owned books only
+        </p>
         </form>
       );
   }
