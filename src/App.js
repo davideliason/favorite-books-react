@@ -10,19 +10,33 @@ class SearchBar extends Component{
   }
 }
 
+class GenreBar extends Component{
+  render(){
+    return(
+      <h4>{this.props.category}</h4>
+    );
+  }
+}
+
+class BookBox extends Component{
+  render(){
+    return(
+      <div>
+        <h3>Title  Author</h3>
+        {this.props.books[0].title}
+      </div>
+    );
+  }
+}
+
 
 class FilterableFaveBookApp extends Component {
   render() {
-    var books = [];
-    this.props.books.forEach(function(book){
-      books.push(book.title);
-    })
+   
     return (
       <div className="App">
         <SearchBar />
-        <div>{books}
-        </div>
-
+        <BookBox books = {this.props.books} />
       </div>
     );
   }
