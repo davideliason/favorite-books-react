@@ -4,7 +4,7 @@ import './App.css';
 
 
 
-class App extends Component {
+class FilterableFaveBookApp extends Component {
   render() {
     return (
       <div className="App">
@@ -20,12 +20,6 @@ class App extends Component {
   }
 }
 
-var book-data = [
-  {category : "science fiction", author: "Isaac Asimov",title:"I, Robot",owned:false},
-  {category : "science fiction", author: "Frank Herbert", title: "Dune", owned: false},
-  {category : "mystery", author: "Sue Grafton", title: "A is for Alibi", owned: false}
-  {category : "mystery", author: "Dan Brown", title: "The Da Vinci Code",owned: false},
-  {category : "self-help", author: "Thich Nhat Hanh", title:  "Being", owned: true}
-];
 
-export default App;
+
+export default FilterableFaveBookApp;
