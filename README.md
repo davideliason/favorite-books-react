@@ -1,3 +1,10 @@
+9/20/2017
+Favorite Books using React Front-end
+David Eliason
+
+Mission: build app using rec'd process of 1. story boarding 2. Build Static Version 3. id the minimum state needed 4. id where the state should live 5. be able to update state from child (pre-redux)
+
+-----------
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
