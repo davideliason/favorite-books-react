@@ -8,7 +8,7 @@ class SearchBar extends Component{
         <form>
           <input type="text" placeholder="Search ..." value={this.props.filterText} />
            <p>
-          <input type="checkbox" />
+          <input type="checkbox" checked={this.props.seeBookOwned} />
           {' '}
           show owned books only
         </p>
@@ -62,7 +62,7 @@ class FilterableFaveBookApp extends Component {
     super(props);
     this.state={
       filterText: '',
-      seeBookOwned: false
+      seeBookOwned: true
     }
   }
   render() {
