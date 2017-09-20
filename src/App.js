@@ -19,11 +19,16 @@ class GenreBar extends Component{
 }
 
 class BookBox extends Component{
+  
   render(){
+    var booksArr = [];
+    this.props.books.forEach(function(book){
+      booksArr.push(book.title + book.author);
+    });
     return(
       <div>
         <h3>Title  Author</h3>
-        {this.props.books[0].title}
+        {booksArr}
       </div>
     );
   }
