@@ -58,8 +58,14 @@ class BookBox extends Component{
 
 
 class FilterableFaveBookApp extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      filterText: '',
+      seeBookOwned: false
+    }
+  }
   render() {
-   
     return (
       <div className="App">
         <SearchBar />
