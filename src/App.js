@@ -38,11 +38,14 @@ class BookBox extends Component{
   render(){
     var booksArr = [];
     var lastCategory = null;
-      console.log(this.props.filterText);
+      var x = this.props.filterText;
       console.log(this.props.seeBookOwned);
 
 
     this.props.books.forEach(function(book){
+      if(book.title === x){
+        console.log("match");
+      }
 
       if(book.category !== lastCategory){
         booksArr.push(<GenreBar category={book.category} />);
@@ -65,7 +68,7 @@ class FilterableFaveBookApp extends Component {
   constructor(props){
     super(props);
     this.state={
-      filterText: 'hello',
+      filterText: 'The Da Vinci Code',
       seeBookOwned: true
     }
   }
