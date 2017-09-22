@@ -68,7 +68,7 @@ class BookBox extends Component{
       var localSeeBookOwned = this.props.seeBookOwned;
 
     this.props.books.forEach(function(book){
-      if(book.title !== localFilterText || !book.owned && localSeeBookOwned ){
+      if(book.title.indexOf(localFilterText) === -1 || !book.owned && localSeeBookOwned ){
         return;
       }
 
@@ -94,7 +94,7 @@ class FilterableFaveBookApp extends Component {
     super(props);
 
     this.state={
-      filterText: 'The Da Vinci Code',
+      filterText: '',
       seeBookOwned: true
       }
 
