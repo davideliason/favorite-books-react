@@ -3,12 +3,36 @@ import logo from './logo.svg';
 import './App.css';
 
 class SearchBar extends Component{
+
+  constructor(props){
+    super(props);
+     this.handleFilterTextInputChange = this.handleFilterTextInputChange.bind(this);
+     this.handleSeeBookOwned = this.handleSeeBookOwned.bind(this);
+  }
+  
+  handleFilterTextInputChange(e) {
+    this.props.onFilterTextInput(e.target.value);
+  }
+  
+  handleSeeBookOwned(e) {
+    this.props.onSeeBookOwned(e.target.checked);
+   }
+
+
   render(){
     return(
         <form>
-          <input type="text" placeholder="Search ..." value={this.props.filterText} />
+          <input 
+            type="text" 
+            placeholder="Search ..." 
+            value={this.props.filterText} 
+            onChange={this.handleFilterTextInputChange}
+            />
            <p>
-          <input type="checkbox" checked={this.props.seeBookOwned} />
+          <input 
+            type="checkbox" 
+            checked={this.props.seeBookOwned}
+            onChange={this.handleSeeBookOwned} />
           {' '}
           show owned books only
         </p>
@@ -16,6 +40,8 @@ class SearchBar extends Component{
       );
   }
 }
+// onFilterTextInput
+// onSeeBookOwned
 
 class GenreBar extends Component{
   render(){
