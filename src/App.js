@@ -88,14 +88,16 @@ class FilterableFaveBookApp extends Component {
     })
    }
 
-  
   render() {
     return (
       <div className="App">
         <SearchBar 
           filterText={this.state.filterText}
           seeBookOwned={this.state.seeBookOwned}
+          onFilterTextInput={this.handleFilterTextInput}
+          onSeeBookOwned={this.handleSeeBookOwned}
          />
+
         <BookBox 
           books = {this.props.books} 
           filterText = {this.state.filterText}
@@ -105,6 +107,7 @@ class FilterableFaveBookApp extends Component {
     );
   }
 }
+
 
 
 
