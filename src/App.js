@@ -43,8 +43,8 @@ class BookBox extends Component{
 
 
     this.props.books.forEach(function(book){
-      if(book.title === x){
-        console.log("match");
+      if(book.title !== x){
+        return;
       }
 
       if(book.category !== lastCategory){
