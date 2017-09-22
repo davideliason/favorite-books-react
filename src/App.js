@@ -38,8 +38,12 @@ class BookBox extends Component{
   render(){
     var booksArr = [];
     var lastCategory = null;
+      console.log(this.props.filterText);
+      console.log(this.props.seeBookOwned);
+
 
     this.props.books.forEach(function(book){
+
       if(book.category !== lastCategory){
         booksArr.push(<GenreBar category={book.category} />);
        }
@@ -61,7 +65,7 @@ class FilterableFaveBookApp extends Component {
   constructor(props){
     super(props);
     this.state={
-      filterText: '',
+      filterText: 'hello',
       seeBookOwned: true
     }
   }
@@ -72,7 +76,11 @@ class FilterableFaveBookApp extends Component {
           filterText={this.state.filterText}
           seeBookOwned={this.state.seeBookOwned}
          />
-        <BookBox books = {this.props.books} />
+        <BookBox 
+          books = {this.props.books} 
+          filterText = {this.state.filterText}
+          seeBookOwned = {this.state.seeBookOwned}
+          />
       </div>
     );
   }
