@@ -38,12 +38,11 @@ class BookBox extends Component{
   render(){
     var booksArr = [];
     var lastCategory = null;
-      var x = this.props.filterText;
-      console.log(this.props.seeBookOwned);
-
+      var localFilterText= this.props.filterText;
+      var localSeeBookOwned = this.props.seeBookOwned;
 
     this.props.books.forEach(function(book){
-      if(book.title !== x){
+      if(book.title !== localFilterText || !book.owned && localSeeBookOwned ){
         return;
       }
 
