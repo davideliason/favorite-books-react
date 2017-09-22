@@ -66,11 +66,29 @@ class BookBox extends Component{
 class FilterableFaveBookApp extends Component {
   constructor(props){
     super(props);
+
     this.state={
       filterText: 'The Da Vinci Code',
       seeBookOwned: true
-    }
+      }
+
+     this.handleFilterTextInput = this.handleFilterTextInput.bind(this);
+     this.handleSeeBookOwned = this.handleSeeBookOwned.bind(this);
   }
+
+  handleFilterTextInput(filterText) {
+    this.setState({
+      filterText: filterText
+    });
+  }
+  
+  handleSeeBookOwned(ownedOnly) {
+    this.setState({
+      seeBookOwned: ownedOnly
+    })
+   }
+
+  
   render() {
     return (
       <div className="App">
